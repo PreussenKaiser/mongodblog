@@ -1,0 +1,17 @@
+<div *ngIf="this.blog != null">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="display-5 text-center">
+                {{this.blog.title}}
+            </h2>
+            <h5 class="h3 fw-light text-center">
+                {{this.blog.date}}
+            </h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 mx-auto"
+             [innerHtml]="this.blog.body"></div>
+    </div>
+</div>

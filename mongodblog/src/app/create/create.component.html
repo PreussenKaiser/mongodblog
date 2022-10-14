@@ -1,0 +1,47 @@
+<div class="row"
+     *ngIf="this.blog != null">
+     
+    <form class="mx-auto">
+        <div class="mb-3">
+            <label for="title"
+                   class="form-label">
+
+                Title
+            </label>
+            <input type="text"
+                   class="form-control"
+                   name="title"
+                   [(ngModel)]="this.blog.title"
+                   required>
+
+        </div>
+        <div class="mb-3">
+            <label for="body"
+                   class="form-label">
+                
+                Body
+            </label>
+            <editor name="body"
+                    apiKey="{{this.apiKey}}"
+                    [(ngModel)]="this.blog.body"
+                    required></editor>
+
+        </div>
+
+        <div class="mb-3">
+            <button type="button"
+                    class="btn btn-danger mx-1"
+                    (click)="this.goBack()">
+            
+                Cancel
+            </button>
+
+            <button type="button"
+                    class="btn btn-primary mx-1"
+                    (click)="this.create()">
+                    
+                Create
+            </button>
+        </div>
+    </form>
+</div>
